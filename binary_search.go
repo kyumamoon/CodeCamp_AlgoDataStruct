@@ -38,13 +38,12 @@ func recursiveBinarySearch(list []int, target int) bool {
 		if list[int(midpoint)] == target {
 			return true
 		} else if list[int(midpoint)] < target {
-			recursiveBinarySearch(list[int(midpoint)+1:], target)
+			return recursiveBinarySearch(list[int(midpoint)+1:], target)
 		} else {
-			recursiveBinarySearch(list[:int(midpoint)], target)
+			return recursiveBinarySearch(list[:int(midpoint)], target)
 		}
 	}
 
-	return false
 }
 
 func main() {
@@ -58,6 +57,6 @@ func main() {
 		fmt.Println("NO VALUES FOUND.")
 	}*/
 
-	y := recursiveBinarySearch(list, 5)
+	y := recursiveBinarySearch(list, 11)
 	fmt.Println("Target Found:", y)
 }
